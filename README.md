@@ -15,6 +15,7 @@ This project is a personal endeavor of mine to create and operate a content crea
 - Final Segment Renders
   - Videos (.mp4)
   - Subtitles (.srt)
+  - Code (.py)
   - Links to Publish Location (YouTube)
   - Audio will not be provided separately
 
