@@ -33,9 +33,13 @@ class CasesExample(Scene):
 
         text1.move_to(UP)
         eq.next_to(text1, DOWN*3)
+
+        title = Tex(r"\underline{Hyperoperations}")
+        title.move_to(UP*3)
+
         # title = MathTex(r"\text{The Recursive Definition of } \mathbb{N}_0 \text{:}")
         # title.next_to(text, UP)
-        self.play(DrawBorderThenFill(text))
+        self.play(DrawBorderThenFill(text), Write(title))
         self.play(Transform(text, text1))
         self.play(DrawBorderThenFill(eq))
 
@@ -46,4 +50,5 @@ class CasesExample(Scene):
             GrowFromCenter(brace),
             FadeIn(t1)
         )
+        self.wait(2)
         # self.play(Write(title))
