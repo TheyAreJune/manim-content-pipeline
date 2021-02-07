@@ -1,0 +1,29 @@
+\documentclass[preview]{standalone}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+\linespread{1}
+
+\begin{document}
+
+\begin{align*}
+H_n(a, b)=a[n]b=\begin{cases}b+1, & \text{if } n=0 \\a, & \text{if } n=1 \text{ and } b=0 \\0, & \text{if } n=2 \text{ and } b=0 \\1, & \text{if } n \geq 3 \text{ and } b=0 \\H_{n-1}(a,H_n(a,b-1)), & \text{otherwise}\end{cases}
+\end{align*}
+
+\end{document}
