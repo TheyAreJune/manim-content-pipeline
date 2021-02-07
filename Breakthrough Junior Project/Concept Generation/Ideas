@@ -1,0 +1,20 @@
+Alright so this is a random informal list of ideas. 
+
+For this challenge I have 3 minutes max to explain a difficult concept to understand in math, physics, or SARS-COV-2. I plan to work with math, specifically Calculus 2, but I am worried that it may not be at a high enough level to earn the highest marks.
+
+So I want to work with the volume of rotational solids.
+
+This will likely need both 3D and 2D animations within Manim, irl camera work, Blender motion tracking, blender animation, LaTeX work for text gen, sound work in Audacity(?), video compositing and grading through blender.
+
+The script will need to be 300-600 words, though it may have to be less to fit the time constraints and still talk at an intelligible speed.
+
+Start it off with an irl camera shot where I have a curved pitcher (think Kool-Aid Man) full of an easily visible colored liquid. Something like:
+    "I'm sure we all know that filling a hollow form with a liquid, pouring it out, then measuring the volume if the liquid, is a simple way to find volume, but what if this pitcher was curved in a different way?"
+
+This is where the camera would then move until it is looking directly downwards over a sheet of paper which will have tracking dots on it. This will be motion tracked and replaced with a CGI piece of paper which will have a pencil drawing out a set of axes. The pencil will go off screen and this will crossfade to a duplicate of the drawing done in Manim. Hopefully this will be an invisible change.
+
+Manim must be rendered with a transparent or a white background for this.
+
+Background music will likely be very necessary. Think Contrapoints when it comes to the quick intro and camera move. This likely will be the only work with the camera throughout the entire thing, so make sure the script is very-much done and reviewed before trying to organize that.
+
+If the camera is a high enough res, then we don't need to worry about having the shots exactly perfect, since we can zoom, rotate, and otherwise manipulate the footage later and still keep a great resolution.
