@@ -3,6 +3,9 @@ import math
 
 class CasesExample(Scene):
     def construct(self):
+        title = Tex(r"\underline{Hyperoperations}")
+        title.move_to(UP*3)
+
         text = MathTex(
             r"H_n(a, b)=a[n]b="
             r"\begin{cases}"
@@ -34,9 +37,6 @@ class CasesExample(Scene):
         text1.move_to(UP)
         eq.next_to(text1, DOWN*3)
 
-        title = Tex(r"\underline{Hyperoperations}")
-        title.move_to(UP*3)
-
         # title = MathTex(r"\text{The Recursive Definition of } \mathbb{N}_0 \text{:}")
         # title.next_to(text, UP)
         self.play(DrawBorderThenFill(text), Write(title))
@@ -52,3 +52,19 @@ class CasesExample(Scene):
         )
         self.wait(2)
         # self.play(Write(title))
+
+class HyperOpDemo(Scene):
+    def construct(self):
+        title = Tex(r"\underline{Multiplication}")
+        title.move_to(UP*3)
+
+        subtitle = MathTex(r"H_2(a, 7)=a[2]7")
+        subtitle.to_edge(LEFT)
+        subtitle.shift(RIGHT)
+        subtitle.shift(UP*2)
+
+        centerText = MathTex("a+a+a+a+a+a=7a")
+
+        self.play(Write(title), Write(subtitle))
+        self.play(Write(centerText))
+        self.wait(2)
