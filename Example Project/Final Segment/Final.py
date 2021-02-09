@@ -63,8 +63,54 @@ class HyperOpDemo(Scene):
         subtitle.shift(RIGHT)
         subtitle.shift(UP*2)
 
-        centerText = MathTex("a+a+a+a+a+a=7a")
+        # centerText = MathTex("a+a+a+a+a+a=7a")
+
+        c1 = MathTex("a")
+        p1 = MathTex("+")
+        c1.move_to(LEFT*3)
+        p1.move_to(LEFT*2.5)
+
+        c2 = MathTex("a")
+        p2 = MathTex("+")
+        c2.move_to(LEFT*2)
+        p2.move_to(LEFT*1.5)
+
+        c3 = MathTex("a")
+        p3 = MathTex("+")
+        c3.move_to(LEFT)
+        p3.move_to(LEFT*0.5)
+
+        c4 = MathTex("a")
+        p4 = MathTex("+")
+        p4.move_to(RIGHT*0.5)
+
+        c5 = MathTex("a")
+        p5 = MathTex("+")
+        c5.move_to(RIGHT)
+        p5.move_to(RIGHT*1.5)
+
+        c6 = MathTex("a")
+        p6 = MathTex("+")
+        c6.move_to(RIGHT*2)
+        p6.move_to(RIGHT*2.5)
+
+        c7 = MathTex("a")
+        c7.move_to(RIGHT*3)
 
         self.play(Write(title), Write(subtitle))
-        self.play(Write(centerText))
+        # self.play(Write(centerText))
         self.wait(2)
+
+        self.play(Write(c1), run_time=0.5)
+        self.play(Write(p1), run_time=0.25)
+        self.play(Write(c2), run_time=0.5)
+        self.play(Write(p2), run_time=0.25)
+        self.play(Write(c3), run_time=0.5)
+        self.play(Write(p3), run_time=0.25)
+        self.play(Write(c4), run_time=0.5)
+        self.play(Write(p4), run_time=0.25)
+        self.play(Write(c5), run_time=0.5)
+        self.play(Write(p5), run_time=0.25)
+        self.play(Write(c6), run_time=0.5)
+        self.play(Write(p6), run_time=0.25)
+        self.play(Write(c7), run_time=0.5)
