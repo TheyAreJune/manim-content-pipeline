@@ -27,6 +27,6 @@ For suggestions about future content, please feel free to let me know using this
 
 ---
 
-This work requires Manim CE in order to use. Manim CE is a mathematics-based animation library for Python. originally created by Grant Sanderson, the man behind the 3Blue1Brown YouTube channel. More recently it has been picked up as an open source community project, and that version is what is being used here.
+This work requires Manim CE in order to use. Manim CE is a mathematics-based animation library for Python. Originally created by Grant Sanderson, the man behind the 3Blue1Brown YouTube channel. More recently it has been picked up as an open source community project, and that version is what is being used here.
 
 Check it out at https://manim.community/ or at https://github.com/ManimCommunity/manim!
