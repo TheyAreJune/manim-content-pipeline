@@ -1,1 +1,0 @@
-$qualityLevel = Read-Host -Prompt 'Specify Quality Modifiers'; cd ${fileDirname}; manim ${fileBasename} $qualityLevel
