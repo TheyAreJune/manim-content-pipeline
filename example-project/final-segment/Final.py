@@ -1,5 +1,4 @@
 from manim import *
-import math
 
 class CasesExample(Scene):
     def construct(self):
