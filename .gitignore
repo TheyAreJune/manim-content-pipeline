@@ -1,0 +1,10 @@
+# ignore all .aux, .dvi, .log files. in the future I will try to block svg files from certain locations.
+*.aux
+*.dvi
+*.log
+
+# block media render folders. if a render matters then it will be added to a higher directory anyway.
+media/
+
+# block the render caching
+__pycache__/
