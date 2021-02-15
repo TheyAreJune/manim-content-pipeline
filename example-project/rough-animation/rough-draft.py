@@ -116,15 +116,52 @@ class HyperOpDemo(Scene):
 
 class NotationExplain(Scene):
     def construct(self):
+        centerdivider = Line(UP*1.75, DOWN*1.75)
         header = Tex("\\underline{Knuth's Up-Arrow Notation}")
-        knuths = MathTex(r"n/a \\ n/a \\ a \uparrow b \\ a \uparrow \uparrow b \\ a \uparrow \uparrow \uparrow b \\ a \uparrow \uparrow \uparrow \uparrow b")
-        operations = Tex(r"1 \\ 2 \\ 3 \\ 4 \\ 5 \\ 6")
+
+        knuths1 = MathTex(r"n/a")
+        knuths2 = MathTex(r"n/a")
+        knuths3 = MathTex(r"a \uparrow b")
+        knuths4 = MathTex(r"a \uparrow \uparrow b")
+        knuths5 = MathTex(r"a \uparrow \uparrow \uparrow b")
+        knuths6 = MathTex(r"a \uparrow \uparrow \uparrow \uparrow b")
+
+        operations1 = Tex("1")
+        operations2 = Tex("2")
+        operations3 = Tex("3")
+        operations4 = Tex("4")
+        operations5 = Tex("5")
+        operations6 = Tex("6")
 
         header.move_to(UP*3)
-        knuths.move_to(LEFT)
-        operations.move_to(RIGHT)
+
+        knuths1.move_to(LEFT+UP*1.5)
+        knuths2.move_to(LEFT+UP*0.9)
+        knuths3.move_to(LEFT+UP*0.3)
+        knuths4.move_to(LEFT+DOWN*0.3)
+        knuths5.move_to(LEFT+DOWN*0.9)
+        knuths6.move_to(LEFT+DOWN*1.5)
+
+        operations1.move_to(RIGHT+UP*1.5)
+        operations2.move_to(RIGHT+UP*0.9)
+        operations3.move_to(RIGHT+UP*0.3)
+        operations4.move_to(RIGHT+DOWN*0.3)
+        operations5.move_to(RIGHT+DOWN*0.9)
+        operations6.move_to(RIGHT+DOWN*1.5)
 
         self.play(Write(header))
-        self.play(ShowCreation(knuths), ShowCreation(operations))
+        self.play(ShowCreation(centerdivider))
+        self.play(ShowCreation(knuths1), ShowCreation(operations1))
+        # self.wait(0.5)
+        self.play(ShowCreation(knuths2), ShowCreation(operations2))
+        # self.wait(0.5)
+        self.play(ShowCreation(knuths3), ShowCreation(operations3))
+        # self.wait(0.5)
+        self.play(ShowCreation(knuths4), ShowCreation(operations4))
+        # self.wait(0.5)
+        self.play(ShowCreation(knuths5), ShowCreation(operations5))
+        # self.wait(0.5)
+        self.play(ShowCreation(knuths6), ShowCreation(operations6))
+        self.wait(1)
 
         # Need to do! The collumns are not aligned and must be fixed. LaTeX Tables do not appear to be working.
