@@ -116,15 +116,34 @@ class HyperOpDemo(Scene):
 
 class NotationExplain(Scene):
     def construct(self):
-        centerdivider = Line(UP*1.75, DOWN*1.75)
-        header = Tex("\\underline{Knuth's Up-Arrow Notation}")
+        lb = 1.25
 
-        knuths1 = MathTex(r"n/a")
-        knuths2 = MathTex(r"n/a")
+        standard = MathTex(r"H_n(a,b)").scale(2)
+        sqbracket = MathTex(r"a[n]b").scale(2)
+        knuthup = MathTex(r"a \uparrow b").scale(2)
+
+        self.play(Write(standard))
+        self.wait(0.5)
+        self.play(Transform(standard, sqbracket))
+        self.wait(0.5)
+        self.play(Transform(standard, knuthup))
+        self.wait(1.5)
+        self.play(FadeOutAndShift(standard, DOWN*3))
+
+        # Divider
+
+        centerdivider = Line(UP*1.75, DOWN*2.35)
+        header = Tex("\\underline{Knuth's Up-Arrow Notation}")
+        leftlabel = MathTex(r"\text{Notation} \rightarrow")
+        rightlabel = MathTex(r"\leftarrow \text{n Value}")
+
+        knuths1 = Tex(r"n/a")
+        knuths2 = Tex(r"n/a")
         knuths3 = MathTex(r"a \uparrow b")
         knuths4 = MathTex(r"a \uparrow \uparrow b")
         knuths5 = MathTex(r"a \uparrow \uparrow \uparrow b")
-        knuths6 = MathTex(r"a \uparrow \uparrow \uparrow \uparrow b")
+        knuths6 = MathTex(r"a \uparrow^4 b")
+        knuthsn = MathTex(r"a \uparrow^{n-2} b")
 
         operations1 = Tex("1")
         operations2 = Tex("2")
@@ -132,15 +151,22 @@ class NotationExplain(Scene):
         operations4 = Tex("4")
         operations5 = Tex("5")
         operations6 = Tex("6")
+        operationsn = MathTex("n")
+
+        desc = Tex("For Exponentiation and Higher")
+        desc.move_to(DOWN*3.3)
 
         header.move_to(UP*3)
+        leftlabel.move_to(LEFT*(lb+3))
+        rightlabel.move_to(RIGHT*3)
 
-        knuths1.move_to(LEFT+UP*1.5)
-        knuths2.move_to(LEFT+UP*0.9)
-        knuths3.move_to(LEFT+UP*0.3)
-        knuths4.move_to(LEFT+DOWN*0.3)
-        knuths5.move_to(LEFT+DOWN*0.9)
-        knuths6.move_to(LEFT+DOWN*1.5)
+        knuths1.move_to(LEFT*lb+UP*1.5)
+        knuths2.move_to(LEFT*lb+UP*0.9)
+        knuths3.move_to(LEFT*lb+UP*0.3)
+        knuths4.move_to(LEFT*lb+DOWN*0.3)
+        knuths5.move_to(LEFT*lb+DOWN*0.9)
+        knuths6.move_to(LEFT*lb+DOWN*1.5)
+        knuthsn.move_to(LEFT*lb+DOWN*2.1)
 
         operations1.move_to(RIGHT+UP*1.5)
         operations2.move_to(RIGHT+UP*0.9)
@@ -148,20 +174,17 @@ class NotationExplain(Scene):
         operations4.move_to(RIGHT+DOWN*0.3)
         operations5.move_to(RIGHT+DOWN*0.9)
         operations6.move_to(RIGHT+DOWN*1.5)
+        operationsn.move_to(RIGHT+DOWN*2.1)
 
         self.play(Write(header))
-        self.play(ShowCreation(centerdivider))
+        self.play(ShowCreation(centerdivider), Write(desc))
         self.play(ShowCreation(knuths1), ShowCreation(operations1))
-        # self.wait(0.5)
         self.play(ShowCreation(knuths2), ShowCreation(operations2))
-        # self.wait(0.5)
         self.play(ShowCreation(knuths3), ShowCreation(operations3))
-        # self.wait(0.5)
         self.play(ShowCreation(knuths4), ShowCreation(operations4))
-        # self.wait(0.5)
         self.play(ShowCreation(knuths5), ShowCreation(operations5))
-        # self.wait(0.5)
         self.play(ShowCreation(knuths6), ShowCreation(operations6))
+        self.play(ShowCreation(knuthsn), ShowCreation(operationsn), ShowCreation(leftlabel), ShowCreation(rightlabel))
         self.wait(1)
 
         # Need to do! The collumns are not aligned and must be fixed. LaTeX Tables do not appear to be working.
