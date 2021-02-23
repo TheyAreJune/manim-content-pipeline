@@ -1,54 +1,257 @@
 from manim import *
 
-class colortest(Scene):
+class colors(Scene):
     def construct(self):
+        # Radius
         r = 0.25
-        # Blues
-        a = Dot(radius=r, fill_opacity=1, color=BLUE_A).move_to(UP*3+LEFT*4)
-        b = Dot(radius=r, fill_opacity=1, color=BLUE_B).move_to(UP*3+LEFT*3.25)
-        c = Dot(radius=r, fill_opacity=1, color=BLUE_C).move_to(UP*3+LEFT*2.5)
-        d = Dot(radius=r, fill_opacity=1, color=BLUE_D).move_to(UP*3+LEFT*1.75)
-        e = Dot(radius=r, fill_opacity=1, color=BLUE_E).move_to(UP*3+LEFT)
-        f = Dot(radius=r, fill_opacity=1, color=DARK_BLUE).move_to(UP*3+LEFT*.25)
-        #Golds
-        g = Dot(radius=r, fill_opacity=1, color=GOLD_A).move_to(UP*3+RIGHT)
-        h = Dot(radius=r, fill_opacity=1, color=GOLD_B).move_to(UP*3+RIGHT*1.75)
-        i = Dot(radius=r, fill_opacity=1, color=GOLD_C).move_to(UP*3+RIGHT*2.5)
-        j = Dot(radius=r, fill_opacity=1, color=GOLD_D).move_to(UP*3+RIGHT*3.25)
-        k = Dot(radius=r, fill_opacity=1, color=GOLD_E).move_to(UP*3+RIGHT*4)
-        #Greens
-        l = Dot(radius=r, fill_opacity=1, color=GREEN_A).move_to(UP*2.25+LEFT*4)
-        m = Dot(radius=r, fill_opacity=1, color=GREEN_B).move_to(UP*2.25+LEFT*3.25)
-        n = Dot(radius=r, fill_opacity=1, color=GREEN_C).move_to(UP*2.25+LEFT*2.5)
-        o = Dot(radius=r, fill_opacity=1, color=GREEN_D).move_to(UP*2.25+LEFT*1.75)
-        p = Dot(radius=r, fill_opacity=1, color=GREEN_E).move_to(UP*2.25+LEFT)
-        q = Dot(radius=r, fill_opacity=1, color=GREEN_SCREEN).move_to(UP*2.25+LEFT*.25)
-        #Maroons
-        r1 = Dot(radius=r, fill_opacity=1, color=MAROON_A).move_to(UP*2.25+RIGHT)
-        s = Dot(radius=r, fill_opacity=1, color=MAROON_B).move_to(UP*2.25+RIGHT*1.75)
-        t = Dot(radius=r, fill_opacity=1, color=MAROON_C).move_to(UP*2.25+RIGHT*2.5)
-        u = Dot(radius=r, fill_opacity=1, color=MAROON_D).move_to(UP*2.25+RIGHT*3.25)
-        v = Dot(radius=r, fill_opacity=1, color=MAROON_E).move_to(UP*2.25+RIGHT*4)
-        #Purples
-        w = Dot(radius=r, fill_opacity=1, color=PURPLE_A).move_to(UP*1.5+LEFT*4)
-        x = Dot(radius=r, fill_opacity=1, color=PURPLE_B).move_to(UP*1.5+LEFT*3.25)
-        y = Dot(radius=r, fill_opacity=1, color=PURPLE_C).move_to(UP*1.5+LEFT*2.5)
-        z = Dot(radius=r, fill_opacity=1, color=PURPLE_D).move_to(UP*1.5+LEFT*1.75)
-        aa = Dot(radius=r, fill_opacity=1, color=PURPLE_E).move_to(UP*1.5+LEFT)
 
-        blues = VGroup(a, b, c, d, e, f)
-        golds = VGroup(g, h, i, j, k)
-        greens = VGroup(l, m, n, o, p, q)
-        maroons = VGroup(r1, s, t, u, v)
-        purples = VGroup(w, x, y, z, aa)
-        #reds = VGroup()
-        #teals = VGroup()
-        #yellows = VGroup()
+        l = 0
+        s = 5.5
 
-        self.play(Write(blues))
-        self.play(Write(golds))
-        self.play(Write(greens))
-        self.play(Write(maroons))
-        self.play(Write(purples))
+        #labels
+        misc = Tex("\\underline{Miscellaneous}").move_to(RIGHT*((7*s)/10))
 
-        self.wait(1)
+        a = Tex("A").move_to(UP*3 + LEFT*((s-2)-0.75))
+        b = Tex("B").move_to(UP*3 + LEFT*((s-2)-0.75*2))
+        c1 = Tex("C").move_to(UP*3 + LEFT*((s-2)-0.75*3))
+        d = Tex("D").move_to(UP*3 + LEFT*((s-2)-0.75*4))
+        e = Tex("E").move_to(UP*3 + LEFT*((s-2)-0.75*5))
+
+        purple = Tex("PURPLE -")
+        blue = Tex("BLUE -")
+        teal = Tex("TEAL -")
+        green = Tex("GREEN -")
+        yellow = Tex("YELLOW -")
+        gold = Tex("GOLD -")
+        red = Tex("RED -")
+        maroon = Tex("MAROON -")
+
+        c = (
+            PURPLE_A,
+            PURPLE_B,
+            PURPLE_C,
+            PURPLE_D,
+            PURPLE_E,
+            BLUE_A,
+            BLUE_B,
+            BLUE_C,
+            BLUE_D,
+            BLUE_E,
+            TEAL_A,
+            TEAL_B,
+            TEAL_C,
+            TEAL_D,
+            TEAL_E,
+            GREEN_A,
+            GREEN_B,
+            GREEN_C,
+            GREEN_D,
+            GREEN_E,
+            YELLOW_A,
+            YELLOW_B,
+            YELLOW_C,
+            YELLOW_D,
+            YELLOW_E,
+            GOLD_A,
+            GOLD_B,
+            GOLD_C,
+            GOLD_D,
+            GOLD_E,
+            RED_A,
+            RED_B,
+            RED_C,
+            RED_D,
+            RED_E,
+            MAROON_A,
+            MAROON_B,
+            MAROON_C,
+            MAROON_D,
+            MAROON_E,
+            WHITE,
+            LIGHT_GRAY,
+            GRAY,
+            GREY_BROWN,
+            DARK_GREY,
+            DARKER_GREY,
+            LIGHT_PINK,
+            PINK,
+            ORANGE,
+            LIGHT_BROWN,
+            DARK_BROWN,
+            DARK_BLUE,
+            GREEN_SCREEN,
+        )
+
+        section = (
+            5, #blues
+            5, #golds
+            5, #greens
+            5, #maroons
+            5, #purples
+            5, #reds
+            5, #teals
+            5, #yellows
+            6, #misc1
+            7 #misc 2
+        )
+
+        self.play(Write(a), run_time=0.25)
+        self.play(Write(b), run_time=0.25)
+        self.play(Write(c1), run_time=0.25)
+        self.play(Write(d), run_time=0.25)
+        self.play(Write(e), run_time=0.25)
+
+        for o in range(len(section)):
+            for w in range(section[o]):
+                if o < 8:
+                    if o == 0 and w == 0:
+                        purple.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(purple), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    elif o == 1 and w == 0:
+                        blue.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(blue), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    elif o == 2 and w == 0:
+                        teal.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(teal), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    elif o == 3 and w == 0:
+                        green.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(green), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    elif o == 4 and w == 0:
+                        yellow.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(yellow), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    elif o == 5 and w == 0:
+                        gold.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(gold), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    elif o == 6 and w == 0:
+                        red.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(red), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    elif o == 7 and w == 0:
+                        maroon.move_to(UP * (2.25 - ((3 * o) / 4)) + LEFT * (s-(3*(w + 1))/4))
+                        self.play(Write(maroon), run_time=0.25)
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+                    else:
+                        self.play(
+                            Write(
+                                Dot(
+                                    point = UP * (2.25 - ((3 * o) / 4)) + LEFT * ((s-2)-(3*(w + 1))/4),
+                                    radius = r,
+                                    fill_opacity = 1,
+                                    color = c[l],
+                                )
+                            ),
+                        run_time=0.25
+                        )
+
+                elif w == 0 and o == 8:
+                    self.play(Write(misc))
+                    self.play(
+                        Write(
+                            Dot(
+                                point = UP * (5 - ((3 * o) / 4)) + RIGHT * (((s-4.5)+(3*(w + 1))/4)),
+                                radius = r,
+                                fill_opacity = 1,
+                                color = c[l],
+                            )
+                        ),
+                    run_time=0.25
+                    )
+                else:
+                    self.play(
+                        Write(
+                            Dot(
+                                point = UP * (5 - ((3 * o) / 4)) + RIGHT * (((s-4.5)+(3*(w + 1))/4)),
+                                radius = r,
+                                fill_opacity = 1,
+                                color = c[l],
+                            )
+                        ),
+                    run_time=0.25
+                    )
+                l = l + 1
