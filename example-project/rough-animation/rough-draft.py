@@ -185,6 +185,37 @@ class NotationExplain(Scene):
         self.play(ShowCreation(knuths5), ShowCreation(operations5))
         self.play(ShowCreation(knuths6), ShowCreation(operations6))
         self.play(ShowCreation(knuthsn), ShowCreation(operationsn), ShowCreation(leftlabel), ShowCreation(rightlabel))
-        self.wait(1)
+        self.wait(2)
 
-        # Need to do! The collumns are not aligned and must be fixed. LaTeX Tables do not appear to be working.
+        self.play(
+            FadeOut(knuths1),
+            FadeOut(knuths2),
+            FadeOut(knuths3),
+            FadeOut(knuths4),
+            FadeOut(knuths5),
+            FadeOut(knuths6),
+            FadeOut(knuthsn),
+            FadeOut(operations1),
+            FadeOut(operations2),
+            FadeOut(operations3),
+            FadeOut(operations4),
+            FadeOut(operations5),
+            FadeOut(operations6),
+            FadeOut(operationsn),
+            FadeOut(leftlabel),
+            FadeOut(rightlabel),
+            FadeOut(centerdivider),
+            FadeOut(header),
+            FadeOut(desc),
+            )
+        
+        example = MathTex(
+            r"4[3]3\ \rightarrow\ ",
+            r"4\uparrow3",
+            r"= 4^3"
+        )
+
+        self.play(Write(example[0]), run_time=0.5)
+        self.play(Write(example[1]), run_time=0.5)
+        self.play(Write(example[2]), run_time=0.5)
+        self.wait(2)
