@@ -1,4 +1,5 @@
 from manim import *
+from manim.utils import exceptions
 
 class CasesExample(Scene):
     def construct(self):
@@ -114,7 +115,7 @@ class HyperOpDemo(Scene):
         self.play(Write(p6), run_time=0.25)
         self.play(Write(c7), run_time=0.5)
 
-class NotationExplain(Scene):
+class KnuthsExplain(Scene):
     def construct(self):
         lb = 1.25
 
@@ -215,7 +216,63 @@ class NotationExplain(Scene):
             r"= 4^3"
         )
 
+        self.wait(2)
         self.play(Write(example[0]), run_time=0.5)
         self.play(Write(example[1]), run_time=0.5)
         self.play(Write(example[2]), run_time=0.5)
+        self.wait(2)
+class Concept(Scene):
+    def construct(self):
+        ex = MathTex(r"a[n]b = a[n-1](a[n-1](a[n-1](\cdots [n-1](a[n-1](a[n-1]a \cdots)))\ \  n \geq 2").scale(.6)
+
+        successor = MathTex(r"a[0]b \rightarrow \text{Unary. Similar to tally marks.}")
+        successor_label = Tex(r"\underline{Successor}").move_to(UP*3)
+
+        addition = MathTex(r"a[1]b \rightarrow \text{Start with value of } a\text{, repeat successor } b\text{ times}")
+        add_label = Tex(r"\underline{Addition}").move_to(UP*3)
+        add_explain = MathTex(r"2+4 = (1+1)+1+1+1+1").move_to(DOWN*2)
+
+        multi = MathTex(r"a[2]b \rightarrow \text{Add } a \text{ to itself } b \text{ number of times.}")
+        multi_label = Tex(r"\underline{Multiplication}").move_to(UP*3)
+        multi_explain = MathTex(r"2 \times 4=2+2+2+2").move_to(DOWN*2)
+
+        exp = MathTex(r"a[3]b\rightarrow \text{Multiply } a \text{ by itself } b \text{ number of times.}")
+        exp_label = Tex(r"\underline{Exponentiation}").move_to(UP*3)
+        exp_explain = MathTex(r"2^4=2 \times 2 \times 2 \times 2").move_to(DOWN*2)
+
+        tetra = MathTex(r"a[4]b\rightarrow \text{Exponentiate } a \text{ to the power of itself } b \text{ times.}")
+        tetra_label = Tex(r"\underline{Tetration}").move_to(UP*3)
+        tetra_explain = MathTex(r"2^{2^{2^2}}").move_to(DOWN*2)
+
+        self.play(ShowCreation(ex))
+        self.wait(2)
+        self.play(FadeOut(ex))
+        self.play(ShowCreation(successor), ShowCreation(successor_label))
+        self.wait(2)
+        self.play(FadeOut(successor), FadeOut(successor_label))
+
+        self.play(ShowCreation(addition), ShowCreation(add_label))
+        self.wait(1)
+        self.play(ShowCreation(add_explain))
+        self.wait(2)
+        self.play(FadeOut(add_explain), FadeOut(add_label), FadeOut(addition))
+
+        self.play(ShowCreation(multi), ShowCreation(multi_label))
+        self.wait(1)
+        self.play(ShowCreation(multi_explain))
+        self.wait(2)
+        self.play(FadeOut(multi_explain), FadeOut(multi_label), FadeOut(multi))
+
+        self.play(ShowCreation(exp), ShowCreation(exp_label))
+        self.wait(1)
+        self.play(ShowCreation(exp_explain))
+        self.wait(2)
+        self.play(FadeOut(exp_explain), FadeOut(exp_label), FadeOut(exp))
+
+        self.play(ShowCreation(tetra), ShowCreation(tetra_label))
+        self.wait(1)
+        self.play(ShowCreation(tetra_explain))
+        self.wait(2)
+        self.play(FadeOut(tetra_explain), FadeOut(tetra_label), FadeOut(tetra))
+
         self.wait(2)
